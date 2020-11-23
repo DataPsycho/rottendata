@@ -7,7 +7,8 @@ import (
 )
 
 func mapUrls() {
-	// router.GET("/ping", controllers.Ping)
+	http.Handle("/favicon.ico", http.NotFoundHandler())
+	http.HandleFunc("/", controllers.CtrlHome)
 	http.HandleFunc("/home", controllers.CtrlHome)
 	http.HandleFunc("/ping", controllers.CtrlPing)
 }
